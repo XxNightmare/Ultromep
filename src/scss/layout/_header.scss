@@ -1,0 +1,146 @@
+@use '../base/variables' as v;
+@use '../base/globales' as glob;
+@use '../base/mixing' as m;
+
+
+/*Header*/
+.navegacion{
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 1rem 1rem 10rem 0 rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  transition: ease-in-out 0.5s;
+  height: 13rem;
+  max-height: 169rem;
+}
+
+.logo {
+  width: 90%;
+  max-width: 190rem;
+  height: 100%;
+  float: left;
+  img{
+    width: 100%;
+    min-width: 10rem;
+    max-width: 40rem;
+    height: 80%;
+    min-height: 10rem;
+    max-height: 40rem;
+    vertical-align: text-top;
+  }
+}
+
+.navegacion_texto {
+  display: inline-block;
+  width: 100%;
+  height: 200%;
+  a {
+    background-color: rgba(255, 255, 255, 0.75);
+    width: 100%;
+    padding: 0.5rem;
+    display: block;
+    font-weight: 500;
+    color: black;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    margin-right: 1rem;
+    cursor: pointer;
+    transition: ease-in-out 0.5s;
+    &:last-child{
+      margin-right: 0;
+    }
+    &:hover {
+      background-color: rgba(245, 245, 245, 0.9);
+      color: #779c10;
+      background-color: white;
+    }
+  }
+}
+
+.contenido-menu{
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/*Menu Movil*/
+.menu-movil{
+  width: 6rem;
+  &:hover{
+    cursor: pointer;
+  }
+  span{
+    height: .8rem;
+    margin-bottom: .6rem;
+    background-color: v.$verde-oscuro;
+    display: block;
+  }
+}
+
+
+@include m.telefono{
+  .logo{
+    img{
+      vertical-align: top;
+      height: 100%;
+    }
+  }
+  .menu-movil{
+    padding-top: 50% 0;
+  }
+
+}
+
+@include m.tablet{
+  .logo{
+    width: 40%;
+  }
+  .contenido-menu{  display: none;  }
+  
+  .navegacion_texto {
+    background-color: rgba(70, 19, 19, 0);
+    width: 60%;
+    height: 100%;
+    float: right;
+    text-align: center;
+    display: block!important; 
+    a{
+      background-color: rgba(70, 19, 19, 0);
+      padding: 1rem 1rem;
+      display: inline-block;
+      margin-right: 1rem;
+      width: auto;
+      text-align: center;
+      &:hover {
+        background-color: rgba(255, 255, 255, 0);
+      }
+    }
+  }
+}
+
+@include m.escritorio{
+  .navegacion_texto {
+    height: 100%;
+
+    a{ font-size: 2.5rem; }
+  }
+}
+
+@include m.escritorioXL{
+  .logo{ width: 35%; }
+
+  .navegacion_texto{
+    text-align: right;
+    padding-top: 2.5rem;
+    width: 65%;
+    height: 100%;
+    a{
+      font-size: 2.7rem;
+    }
+  }
+}

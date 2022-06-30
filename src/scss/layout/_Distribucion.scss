@@ -1,0 +1,176 @@
+@use '../base/mixing' as m;
+
+/*Distribucion*/
+.distribusion{
+  transition: ease-in-out 5s;
+}
+
+.dist{
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.mensaje_distribucion{
+    margin-top: 2rem;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: 1s;
+    img{
+        width: 100%;
+        height: 35rem;
+        vertical-align: top;
+    }
+    .texto_mensaje_distribucion{
+        padding: 2rem;
+        text-align: justify;
+    }
+}
+
+.snip1361 {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .snip1361 * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.35s ease;
+    transition: all 0.35s ease;
+  }
+
+  .figura_cambiada {
+    position: absolute;
+    top: calc(150%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255);
+    padding: 1.5rem 2.5rem 6.5rem;
+  }
+
+  .figura_cambiada:before {
+    position: absolute;
+    content: '';
+    z-index: 2;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: -webkit-linear-gradient(top, transparent 0%, #ffffff 100%);
+    background-image: linear-gradient(to bottom, transparent 0%, #ffffff 100%);
+  }
+
+  .snip1361 h4,
+  .snip1361 p {
+    margin: 0 0 10rem;
+    text-align: center;
+  }
+
+  .snip1361 a {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+  }
+  
+  .snip1361:hover .figura_cambiada,
+  .snip1361.hover .figura_cambiada {
+    top: 8rem;
+  }
+  
+  .mensaje_Dist{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+  }
+  /*Segundo efecto*/
+  .thumbnail{
+    width: 94%;
+    height: 25rem;
+    overflow: hidden;
+    position: relative;
+    opacity: 0.88;
+    backface-visibility: hidden;
+    transition: all 0.4s ease-out;
+
+    .Dist_Img{
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+    }
+    
+    .Dist_p{
+      position: absolute;
+      z-index: 2;
+      top: calc(12rem - 2rem);
+      left: 0;
+      right: 0;
+      background: rgba(0,0,0,0.7);
+      padding: 1rem;
+      margin: 0 25%;
+      text-align: center;
+      color: white;
+      font-weight: 300;
+      transition: all 0.3s ease-out;
+    }
+
+    &:hover{
+      backface-visibility: hidden;
+      transform: scale(1.1, 1.1);
+      opacity: 1;
+      .Dist_p{
+        opacity: 0;
+      }
+    }
+  }
+
+  @include m.telefono{
+    .thumbnail{
+      width: 94%;
+      height: 35rem;
+      .Dist_p{
+        top: calc(19rem - 2rem);
+      }
+    }
+  }
+
+  @include m.escritorio{
+    .dist{
+      display: flex;
+      justify-content: space-evenly;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: stretch;
+    }
+    .mensaje_Dist{
+      display: flex;
+      justify-content: space-evenly;
+      flex-direction: row;
+      align-items: stretch;
+    }
+    .mensaje_distribucion{
+      width: auto;
+      padding: 2rem 3rem;
+      img{
+        height: 45rem;
+      }
+    
+    }  
+    .thumbnail{
+      width: 40%;
+
+      .Dist_p{
+        top: calc(15rem - 2rem);
+      }
+    }
+  }

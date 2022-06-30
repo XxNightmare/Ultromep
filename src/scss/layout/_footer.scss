@@ -1,0 +1,121 @@
+@use '../base/variables' as var;
+@use '../base/mixing' as m;
+
+.footer {
+    background: rgb(121,163,51);
+    background: linear-gradient(94deg, rgba(121,163,51,1) 0%, rgba(178,204,102,1) 50%, rgba(121,163,51,1) 100%);
+    padding: 2rem 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+}
+
+.partFooter {
+    width: 90%;
+    text-align: center;
+    align-items: center;
+    img{
+        width: 100%;
+        min-width: 10rem;
+        max-width: 40rem;
+        min-height: 10rem;
+        max-height: 40rem;
+    }
+}
+
+.iconos_footer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    &:last-child{
+        margin-top: 0;
+    }
+    p{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+}
+
+.icono-footer{
+    display: flex;
+    align-items: center;
+    i{
+        font-size: 4rem;
+        padding: 1rem;
+        margin-right: 1rem;
+    }
+}
+
+.social-media{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-bottom: 1rem;
+    justify-content: space-evenly;
+    i {
+        font-size: 2.5rem;
+        display: inline-block;
+        color: #000000;
+        border: .2rem solid #000000;
+        border-radius: 50%;
+        width: 3.9rem;
+        height: 3.9rem;
+        line-height: 3.4rem;
+        cursor: pointer;
+        text-align: center;
+        transition: all ease-in-out .3s;
+        margin-bottom: 2rem;
+        
+        &:hover {
+            color: #fff;
+            background-color: rgb(125, 151, 48);
+            border-color: rgb(62, 75, 23);
+        }
+    }
+}
+
+.datos{
+    background: rgb(121,163,51);
+    background: linear-gradient(94deg, rgb(98, 133, 42) 0%, rgb(161, 184, 92) 50%, rgba(98, 133, 42) 100%);
+    color: white;
+    text-transform: uppercase;
+    display: flex;
+    color: white;
+    text-transform: uppercase;
+    flex-direction: column;
+    align-items: center;
+}
+
+@include m.telefono{
+}
+
+@include m.tablet{
+}
+
+@include m.escritorio{
+    .footer{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: auto;
+    }
+    .partFooter {
+        width: 25%;
+    }
+    .social-media{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: space-around;
+    }
+    .datos{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}

@@ -1,0 +1,177 @@
+@use '../base/variables' as var;
+@use '../base/mixing' as m;
+
+.contenido{
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-content: stretch;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.nombre-sitio span{
+    position: relative;
+    text-shadow: 0 0 3rem black;
+    transition: ease-in .6s;
+  }
+  h1:hover{
+    color: #aab687;
+  }
+
+.panel_inicio{
+    padding: 2rem 0;
+    background-color: rgba(255, 255, 255, 0.63);
+}
+.inicio{
+  display: block;
+  .Cont_Izq{
+    text-align: center;
+    .tamano_img{
+      width: 40%;
+      min-width: 25rem;
+    }
+  }
+}
+
+.procedimiento{
+    background-image: url(../img/Publicidad4.PNG);
+    min-height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center right;
+    height: 40rem;
+}
+.contenedor_boton{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    a{
+        width: 27rem;
+        padding: 1rem;
+        color: var.$verde;
+        font-weight: bold;
+        border: .5rem solid var.$verde;
+        border-radius: 2rem;
+        background-color: white;
+        cursor: pointer;
+        &:hover{
+            color: var.$verde-oscuro;
+            border: .5rem solid var.$verde-oscuro;
+            background-color: rgba(255, 255, 255, 0.63);
+        }
+    }
+}
+
+/*Contador*/
+.parallax::before{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
+    -webkit-filter: brightness(.8);
+    filter: brightness(.8);
+    margin-bottom: auto;
+}
+.Desplazando_Img1{
+    position: relative;
+    height: 90rem;
+}
+
+.Desplazando_Img1::before{
+    background-image: url(../img/Publicidad2.jpg);
+    content: '';
+}
+
+@include m.tablet{
+  .char1{
+    top: -3rem;
+    right: 2rem;
+  }
+  .char2{
+    top: 2;
+    left: -0.5rem;
+  }
+  .char3{
+    top: -3rem;
+    right: 2rem;
+  }
+  .char4{
+    top: 2;
+    left: -2.5rem;
+  }
+  .char5{
+    top: -3rem;
+    right: 2rem;
+  }
+  .char6{
+    top: 2;
+    left: -2.5rem;
+  }
+  .char7{
+    top: -3rem;
+    right: 2rem;
+  }
+  .char8{
+    top: 2;
+    left: -0.5rem;
+  }
+}
+
+@include m.escritorio{
+  .inicio{
+    display: flex;
+    justify-content: space-between;
+    .Cont_Izq{
+      width: 50%;
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-wrap: nowrap;
+      justify-content: space-evenly;
+      .tamano_img{
+        max-width: 40rem;
+        width: 90%;
+        height: 75%;
+      }
+    }
+    .Cont_Der {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  .contenedor_boton{
+    text-align: center;
+    display: flex;
+    height: 100%;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: space-between;
+    width: 100%;
+  }
+}
+
+@include m.escritorioXL{
+  .inicio{
+    .Cont_Izq{
+      max-width: 50%;
+      min-height: 100%;
+      .tamano_img{
+        height: 100%;
+      }
+    }
+    .Cont_Der {
+      width: 50%;
+    }
+  }
+}
